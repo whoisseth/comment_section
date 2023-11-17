@@ -10,7 +10,7 @@ export function CommentBoxContainer({ children, className }: Props) {
   return (
     <div
       className={cn(
-        "flex w-full  max-w-[658px] gap-4 rounded-lg bg-white p-5  ",
+        "flex h-fit w-full  max-w-[658px] gap-4 rounded-lg bg-white p-5  ",
         className,
       )}
     >

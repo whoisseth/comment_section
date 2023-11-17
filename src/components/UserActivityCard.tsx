@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import { User } from "./CommentThread";
 
 type UserActivityCardProps = {
-  username: string;
-  currentUser: boolean;
-  timeAgo: string;
+  user: User;
+  currentUser: User;
+  createdAt: string;
 };
 
 export function UserActivityCard(props: UserActivityCardProps) {
@@ -13,21 +14,24 @@ export function UserActivityCard(props: UserActivityCardProps) {
       {/* user image */}
       <Image
         className="rounded-full"
-        src={"https://i.pravatar.cc/150?img=12"}
+        src={props.user.image.webp.substring(1)}
         alt="pravatar image"
         height={30}
         width={30}
       />
       {/* username  */}
-      <p className=" text-sm font-semibold text-gray-700"> amyrobson</p>
+      <p className=" text-sm font-semibold text-gray-700">
+        {" "}
+        {props.user.username}
+      </p>
       {/* you */}
-      {props.currentUser && (
-        <p className="y-1 bg-moderate-blue rounded-sm px-2 text-sm text-white">
+      {props.currentUser.username === props.user.username && (
+        <p className="y-1 rounded-sm bg-moderate-blue px-2 text-sm text-white">
           you
         </p>
       )}
       {/* time */}
-      <p className=" text-sm text-gray-500">1 month ago</p>
+      <p className=" text-sm text-gray-500">{props.createdAt}</p>
     </div>
   );
 }

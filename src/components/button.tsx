@@ -6,7 +6,7 @@ const buttonVarients = cva("button", {
   variants: {
     intent: {
       primary:
-        "bg-moderate-blue hover:bg-ligh-grayish-blue  text-white w-[120px] h-10 rounded-md",
+        "bg-moderate-blue hover:bg-ligh-grayish-blue  text-white  min-w-[100px] max-w-[100px] h-10 rounded-md",
       icon: "flex cursor-pointer items-center",
     },
   },
